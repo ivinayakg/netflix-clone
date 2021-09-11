@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import Row from "./components/Row";
+import "./styles.css";
+import Requests from "./Requests";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header urlString={Requests.fetchTrending} />
+      <Row
+        urlString={Requests.fetchAction}
+        portrait={false}
+        title="Action Movies"
+      />
+      <Row
+        urlString={Requests.fetchTrending}
+        portrait={true}
+        title="Trending Movies"
+      />
+      <Row
+        urlString={Requests.fetchAnimation}
+        portrait={false}
+        title="Animation Movies"
+      />
+      <Row
+        urlString={Requests.fetchComedy}
+        portrait={false}
+        title="Comedy Movies"
+      />
+      <Row
+        urlString={Requests.fetchCrime}
+        portrait={true}
+        title="Crime Movies"
+      />
+      <Row
+        urlString={Requests.fetchDrama}
+        portrait={false}
+        title="Drama Movies"
+      />
+      <Row
+        urlString={Requests.fetchRomance}
+        portrait={false}
+        title="Romance Movies"
+      />
+      <Row
+        urlString={Requests.fetchThriller}
+        portrait={true}
+        title="Thriller Movies"
+      />
     </div>
   );
 }
